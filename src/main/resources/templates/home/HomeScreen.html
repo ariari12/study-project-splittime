@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+<body>
+<h1>Todo List</h1>
+
+<!-- "새로운 목록 추가" 버튼 -->
+<form th:action="@{/addList}" method="post">
+  <button type="submit">새로운 목록 추가</button>
+</form>
+
+<!-- 새로운 할일 입력 폼 -->
+<form th:action="@{/addTodo}" method="post">
+  <input type="text" placeholder="새로운 할 일 추가">
+  <button type="submit">추가</button>
+</form>
+
+<!-- 목록을 표시할 영역 -->
+<div th:id="|list-${todoListIdx}|"
+     th:each="todoList, todoListIdx : ${todoLists}"
+     class="todo-list">
+  <h2>할 일 목록</h2>
+  <ul>
+    <li th:each="todo : ${todoList}" th:text="${todo.text}"></li>
+  </ul>
+</div>
+</body>
+</html>
+

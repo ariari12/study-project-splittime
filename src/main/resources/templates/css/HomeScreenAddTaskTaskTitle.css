@@ -1,0 +1,289 @@
+.botton-navigation-bar-inner {
+  position: absolute;
+  height: 80.65%;
+  width: 100%;
+  top: 19.35%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-darkslategray);
+}
+.vuesaxboldhome-2-icon1 {
+  position: absolute;
+  height: 48%;
+  width: 80%;
+  top: 0;
+  right: 10%;
+  bottom: 52%;
+  left: 10%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.index3 {
+  position: absolute;
+  top: 64%;
+  left: 0;
+  line-height: 150.5%;
+}
+.vuesaxboldhome-2-group {
+  position: absolute;
+  height: 100%;
+  width: 62.5%;
+  top: 0;
+  right: 20.83%;
+  bottom: 0;
+  left: 16.67%;
+}
+.rectangle-parent6 {
+  position: absolute;
+  height: 40.32%;
+  width: 12.8%;
+  top: 29.03%;
+  right: 81.87%;
+  bottom: 30.65%;
+  left: 5.33%;
+  color: var(--color-gray-200);
+}
+.group-icon,
+.vuesaxoutlineclock-icon1 {
+  position: absolute;
+  height: 51.61%;
+  width: 17.07%;
+  top: -6.45%;
+  right: 41.33%;
+  bottom: 54.84%;
+  left: 41.6%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vuesaxoutlineclock-icon1 {
+  height: 48%;
+  width: 64.86%;
+  top: 0;
+  right: 16.22%;
+  bottom: 52%;
+  left: 18.92%;
+}
+.vuesaxoutlineclock-group {
+  position: absolute;
+  height: 100%;
+  width: 77.08%;
+  top: 0;
+  right: 10.42%;
+  bottom: 0;
+  left: 12.5%;
+}
+.rectangle-parent7 {
+  position: absolute;
+  height: 40.32%;
+  width: 12.8%;
+  top: 29.03%;
+  right: 23.2%;
+  bottom: 30.65%;
+  left: 64%;
+}
+.vuesaxoutlineuser-icon1 {
+  position: absolute;
+  height: 48%;
+  width: 66.67%;
+  top: 0;
+  right: 16.67%;
+  bottom: 52%;
+  left: 16.67%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vuesaxoutlineuser-group {
+  position: absolute;
+  height: 100%;
+  width: 75%;
+  top: 0;
+  right: 12.5%;
+  bottom: 0;
+  left: 12.5%;
+}
+.rectangle-parent8 {
+  position: absolute;
+  height: 40.32%;
+  width: 12.8%;
+  top: 29.03%;
+  right: 5.07%;
+  bottom: 30.65%;
+  left: 82.13%;
+}
+.vuesaxoutlinecalendar-icon1 {
+  position: absolute;
+  height: 48%;
+  width: 50%;
+  top: 0;
+  right: 25%;
+  bottom: 52%;
+  left: 25%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vuesaxoutlinecalendar-group {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.rectangle-parent9 {
+  position: absolute;
+  height: 40.32%;
+  width: 12.8%;
+  top: 29.03%;
+  right: 63.73%;
+  bottom: 30.65%;
+  left: 23.47%;
+}
+.botton-navigation-bar1 {
+  position: absolute;
+  top: 688px;
+  left: 0;
+  width: 375px;
+  height: 124px;
+}
+.group-child15,
+.group-child16,
+.rectangle-wrapper {
+  position: absolute;
+  top: 22px;
+  left: 25px;
+  width: 42px;
+  height: 42px;
+}
+.group-child16,
+.rectangle-wrapper {
+  top: 0;
+  left: 0;
+}
+.rectangle-wrapper {
+  top: 22px;
+  left: 310px;
+}
+.div3,
+.index4 {
+  position: absolute;
+  top: 31px;
+  left: 177px;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+}
+.index4 {
+  left: 99px;
+}
+.group-child17 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.74);
+  width: 375px;
+  height: 812px;
+}
+.group-child18 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-base) var(--br-base) 0 0;
+  background-color: var(--color-darkslategray);
+}
+.vuesaxoutlineflag-icon3,
+.vuesaxoutlinetag-icon,
+.vuesaxoutlinetimer-icon {
+  position: absolute;
+  top: 187px;
+  left: 136px;
+  width: 24px;
+  height: 24px;
+}
+.vuesaxoutlinetag-icon,
+.vuesaxoutlinetimer-icon {
+  left: 80px;
+}
+.vuesaxoutlinetimer-icon {
+  left: 24px;
+}
+.do-math-homework1 {
+  position: relative;
+  line-height: 150.5%;
+}
+.do-math-homework-wrapper {
+  position: absolute;
+  top: 69px;
+  left: 24px;
+  border-radius: var(--br-9xs);
+  border: 1px solid var(--border);
+  box-sizing: border-box;
+  width: 325px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-5xs) 16px;
+}
+.add-task,
+.description {
+  position: absolute;
+  line-height: 150.5%;
+}
+.description {
+  top: 125px;
+  left: 24px;
+  color: var(--gray);
+}
+.add-task {
+  top: 25px;
+  left: 25px;
+  font-size: var(--font-size-xl);
+}
+.vuesaxoutlinesend-icon {
+  position: absolute;
+  top: 187px;
+  left: 327px;
+  width: 24px;
+  height: 24px;
+}
+.rectangle-parent10 {
+  position: absolute;
+  height: 28.08%;
+  width: 100%;
+  top: 32.27%;
+  right: 0;
+  bottom: 39.66%;
+  left: 0;
+  text-align: left;
+  font-size: var(--font-size-lg);
+}
+.group-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 375px;
+  height: 812px;
+  text-align: center;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-200);
+}
+.home-screen-add-task-task {
+  position: relative;
+  background-color: var(--bg-color);
+  width: 100%;
+  height: 812px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-300);
+  font-family: var(--font-lato);
+}
