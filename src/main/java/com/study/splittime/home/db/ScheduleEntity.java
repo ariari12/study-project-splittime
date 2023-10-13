@@ -1,12 +1,10 @@
 package com.study.splittime.home.db;
 
+import com.study.splittime.todo.db.ToDoEntity;
 import com.study.splittime.todo.model.ToDoDto;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
@@ -20,6 +18,8 @@ public class ScheduleEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String scheduleName;
+    @OneToMany(mappedBy = "scheduleEntity")
+    private List<ToDoEntity> task;
 
 
 }

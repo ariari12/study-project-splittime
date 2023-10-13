@@ -2,8 +2,6 @@ package com.study.splittime.todo.controller;
 
 import lombok.Getter;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +14,7 @@ import java.util.List;
 
 //@Controller
 //@SpringBootApplication
-public class TodoController {
+public class exController {
 
     // 가상의 모델 데이터 (백엔드에서 받아온 것으로 가정)
     private final List<List<Todo>> todoLists = new ArrayList<>();
@@ -58,7 +56,7 @@ public class TodoController {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(TodoController.class, args);
+        SpringApplication.run(exController.class, args);
     }
     @Getter
     private static class Todo {

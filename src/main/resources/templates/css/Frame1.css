@@ -1,0 +1,334 @@
+.div,
+.group-child,
+.index1,
+.rectangle-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65.81px;
+  height: 93px;
+}
+.div,
+.index1,
+.rectangle-wrapper {
+  top: 7px;
+  left: 1092.19px;
+}
+.div,
+.index1 {
+  top: 21px;
+  left: 79px;
+  letter-spacing: -0.5px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 50px;
+}
+.div {
+  top: 24px;
+  left: 224px;
+  width: 147px;
+  height: 44px;
+}
+.group-parent {
+  position: absolute;
+  top: 13px;
+  left: 38px;
+  width: 1158px;
+  height: 100px;
+}
+.checklist-rafiki-1-icon {
+  position: absolute;
+  top: 84px;
+  left: 428px;
+  width: 575px;
+  height: 641px;
+  overflow: hidden;
+}
+.what-do-you {
+  position: absolute;
+  top: 753px;
+  left: 375px;
+  font-size: 36px;
+  line-height: 150.5%;
+  display: inline-block;
+  width: 684px;
+  height: 85px;
+}
+.home-screen-empty-screen-child {
+  position: absolute;
+  height: 9.17%;
+  width: 8.87%;
+  top: 79.17%;
+  right: 37.77%;
+  bottom: 11.67%;
+  left: 53.37%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.home-screen-empty-screen {
+  position: absolute;
+  top: -2px;
+  left: 702px;
+  background-color: #a8babf;
+  width: 1218px;
+  height: 1080px;
+  overflow: hidden;
+}
+.botton-navigation-bar-child {
+  position: absolute;
+  height: 738.18%;
+  top: 0.53%;
+  right: 140.77px;
+  bottom: -638.71%;
+  max-height: 100%;
+  width: 1084.95px;
+}
+.group-inner {
+  position: absolute;
+  height: 99.17%;
+  width: 99.69%;
+  top: -0.39%;
+  right: -0.36%;
+  bottom: 1.22%;
+  left: 0.67%;
+  transform: rotate(-91.1deg);
+  transform-origin: 0 0;
+}
+.vuesaxboldhome-2-icon {
+  position: absolute;
+  height: 48.46%;
+  width: 80.86%;
+  top: -0.73%;
+  right: 10.18%;
+  bottom: 52.26%;
+  left: 8.96%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.index2 {
+  position: absolute;
+  height: 34.95%;
+  width: 99.9%;
+  top: 0.01%;
+  left: 84.63%;
+  line-height: 150.5%;
+  display: inline-block;
+  transform: rotate(-91.63deg);
+  transform-origin: 0 0;
+}
+.vuesaxboldhome-2-parent {
+  height: 99.51%;
+  width: 62.35%;
+  top: -24.47%;
+  right: 37.5%;
+  bottom: 24.96%;
+  left: 0.14%;
+  transform: rotate(-91.1deg);
+}
+.rectangle-div,
+.rectangle-parent,
+.vuesaxboldhome-2-parent {
+  position: absolute;
+  transform-origin: 0 0;
+}
+.rectangle-parent {
+  height: 63.85%;
+  width: 10.58%;
+  top: 84.77%;
+  right: 85.11%;
+  bottom: -48.62%;
+  left: 4.31%;
+  transform: rotate(-90.74deg);
+  color: var(--color-gray-200);
+}
+.rectangle-div {
+  height: 99.3%;
+  width: 99.47%;
+  top: -0.39%;
+  right: -0.26%;
+  bottom: 1.09%;
+  left: 0.79%;
+  transform: rotate(-91.1deg);
+}
+.vuesaxoutlinecalendar-icon {
+  position: absolute;
+  height: 48.38%;
+  width: 50.86%;
+  top: -0.69%;
+  right: 25.11%;
+  bottom: 52.31%;
+  left: 24.03%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.calendar {
+  position: absolute;
+  height: 34.79%;
+  width: 99.91%;
+  top: 0.01%;
+  left: 74.56%;
+  line-height: 150.5%;
+  display: inline-block;
+  transform: rotate(-91.63deg);
+  transform-origin: 0 0;
+}
+.group-child1,
+.rectangle-group,
+.vuesaxoutlinecalendar-parent {
+  position: absolute;
+  height: 99.44%;
+  width: 99.36%;
+  top: -0.56%;
+  right: 0.01%;
+  bottom: 1.12%;
+  left: 0.63%;
+  transform: rotate(-91.1deg);
+  transform-origin: 0 0;
+}
+.group-child1,
+.rectangle-group {
+  height: 76.96%;
+  width: 9.1%;
+  top: 80.9%;
+  right: 74.38%;
+  bottom: -57.86%;
+  left: 16.53%;
+  transform: rotate(-90.74deg);
+}
+.group-child1 {
+  height: 99.34%;
+  width: 99.58%;
+  top: -0.39%;
+  right: -0.29%;
+  bottom: 1.05%;
+  left: 0.71%;
+  transform: rotate(-91.1deg);
+}
+.vuesaxoutlineclock-icon {
+  position: absolute;
+  height: 48.37%;
+  width: 65.87%;
+  top: -0.62%;
+  right: 16.39%;
+  bottom: 52.25%;
+  left: 17.75%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.focuse {
+  position: absolute;
+  height: 35.02%;
+  width: 99.89%;
+  top: 0.01%;
+  left: 91.97%;
+  line-height: 150.5%;
+  display: inline-block;
+  transform: rotate(-91.64deg);
+  transform-origin: 0 0;
+}
+.group-child2,
+.rectangle-container,
+.vuesaxoutlineclock-parent {
+  position: absolute;
+  height: 99.55%;
+  width: 76.76%;
+  top: -11.91%;
+  right: 22.92%;
+  bottom: 12.36%;
+  left: 0.32%;
+  transform: rotate(-91.1deg);
+  transform-origin: 0 0;
+}
+.group-child2,
+.rectangle-container {
+  height: 68.67%;
+  width: 8.5%;
+  top: 77.56%;
+  right: 62.65%;
+  bottom: -46.23%;
+  left: 28.85%;
+  transform: rotate(-90.74deg);
+}
+.group-child2 {
+  height: 99.32%;
+  width: 99.53%;
+  top: -0.63%;
+  right: 0;
+  bottom: 1.31%;
+  left: 0.47%;
+  transform: rotate(-91.1deg);
+}
+.vuesaxoutlineuser-icon {
+  position: absolute;
+  height: 48.53%;
+  width: 67.36%;
+  top: -0.87%;
+  right: 16.78%;
+  bottom: 52.35%;
+  left: 15.85%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.profile {
+  position: absolute;
+  height: 34.64%;
+  width: 99.92%;
+  top: 0.01%;
+  left: 65.18%;
+  line-height: 150.5%;
+  display: inline-block;
+  transform: rotate(-91.62deg);
+  transform-origin: 0 0;
+}
+.vuesaxoutlineuser-parent {
+  height: 99.63%;
+  width: 74.65%;
+  top: -17.4%;
+  right: 25.27%;
+  bottom: 17.76%;
+  left: 0.07%;
+  transform: rotate(-91.1deg);
+}
+.botton-navigation-bar,
+.group-div,
+.vuesaxoutlineuser-parent {
+  position: absolute;
+  transform-origin: 0 0;
+}
+.group-div {
+  height: 50.7%;
+  width: 9.16%;
+  top: 79.85%;
+  right: 49.08%;
+  bottom: -30.55%;
+  left: 41.76%;
+  transform: rotate(-90.89deg);
+}
+.botton-navigation-bar {
+  top: -0.77px;
+  left: 142.27px;
+  width: 1083.46px;
+  height: 146.31px;
+  transform: rotate(90.5deg);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-300);
+}
+.home-screen-empty-screen-parent {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1080px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-13xl);
+  color: var(--color-black);
+  font-family: var(--font-lato);
+}
