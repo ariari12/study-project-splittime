@@ -9,6 +9,7 @@ public class ScheduleConverter {
     public ScheduleDto toDto(ScheduleEntity scheduleEntity){
         return ScheduleDto.builder()
                 .scheduleName(scheduleEntity.getScheduleName())
+                .status(scheduleEntity.isStatus())
                 .id(scheduleEntity.getId())
                 .build();
 
@@ -16,6 +17,7 @@ public class ScheduleConverter {
     public ScheduleEntity toEntity(ScheduleDto scheduleDto){
         return ScheduleEntity.builder()
                 .scheduleName(scheduleDto.getScheduleName())
+                .status(scheduleDto.isStatus())
                 .id(scheduleDto.getId())
                 .build();
 

@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
-@Entity(name = "todolist")
+@Entity(name = "todo")
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -18,6 +18,7 @@ public class ToDoEntity{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @ManyToOne
+    @JoinColumn(name = "todo")
     private ScheduleEntity scheduleEntity;
     private String name;
     private String description;

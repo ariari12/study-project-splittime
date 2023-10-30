@@ -17,9 +17,12 @@ public class ScheduleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String scheduleName;
+
+    private boolean status;
     @OneToMany(mappedBy = "scheduleEntity")
-    private List<ToDoEntity> task;
+    private List<ToDoEntity> todo;
 
 
 }

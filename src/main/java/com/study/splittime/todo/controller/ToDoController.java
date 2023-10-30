@@ -13,8 +13,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class ToDoController {
     private final ToDoService toDoService;
     @PostMapping("/addTodo")
-    public String addTodo(ToDoDto newTodo, RedirectAttributes rttr) {
-
+    public String addTodo(ToDoDto newTodo, RedirectAttributes rttr) throws Exception {
+        toDoService.create(newTodo);
 
         return "redirect:/"; // 홈 화면으로 리다이렉트
     }
