@@ -17,5 +17,5 @@ public class ScheduleDto {
     private Long id;
     private String scheduleName;
     private boolean status;
-    private List<ToDoDto> ToDoList;
+    private List<ToDoDto> toDoList;
 }

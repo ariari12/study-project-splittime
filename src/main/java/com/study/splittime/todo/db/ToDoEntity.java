@@ -21,7 +21,7 @@ public class ToDoEntity{
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "todo")
+    @JoinColumn(name = "schedule_id")
     private ScheduleEntity scheduleEntity;
 
     private String name;

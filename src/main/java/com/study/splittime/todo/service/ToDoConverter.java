@@ -29,13 +29,13 @@ public class ToDoConverter {
 
     }
     public ToDoEntity toEntity(ToDoDto toDoDto) throws Exception {
-        Optional<ScheduleEntity> byId = scheduleRepository.findById(toDoDto.getScheduleId());
-        if(byId.isPresent()){
-            ScheduleEntity scheduleEntity = byId.get();
+        Optional<ScheduleEntity> scheduleEntity = scheduleRepository.findById(toDoDto.getScheduleId());
+
+        if(scheduleEntity.isPresent()){
             return ToDoEntity.builder()
                     .id(toDoDto.getId())
                     .name(toDoDto.getName())
-                    .scheduleEntity(toDoDto.getScheduleId())
+                    .scheduleEntity(scheduleEntity.get())
                     .description(toDoDto.getDescription())
                     .created(toDoDto.getCreated())
                     .dueDate(toDoDto.getDueDate())
