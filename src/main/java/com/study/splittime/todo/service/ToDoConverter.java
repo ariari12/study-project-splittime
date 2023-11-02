@@ -15,6 +15,7 @@ import java.util.Optional;
 public class ToDoConverter {
     private final ScheduleRepository scheduleRepository;
     public ToDoDto toDto(ToDoEntity toDoEntity){
+
         return ToDoDto.builder()
                 .id(toDoEntity.getId())
                 .name(toDoEntity.getName())
@@ -34,7 +35,7 @@ public class ToDoConverter {
             return ToDoEntity.builder()
                     .id(toDoDto.getId())
                     .name(toDoDto.getName())
-                    .scheduleEntity(scheduleEntity)
+                    .scheduleEntity(toDoDto.getScheduleId())
                     .description(toDoDto.getDescription())
                     .created(toDoDto.getCreated())
                     .dueDate(toDoDto.getDueDate())

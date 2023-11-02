@@ -8,11 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @Slf4j
-@RequestMapping("/")
+@RequestMapping("/home")
 @RequiredArgsConstructor
-public class ScheduleController {
+public class ScheduleApiController {
     private final ScheduleService scheduleService;
     @GetMapping("/{id}")
     public String home(
@@ -27,7 +27,7 @@ public class ScheduleController {
     }
 
     @PostMapping("/addList")
-    public String create(ScheduleDto scheduleDto){
+    public String create(@RequestBody ScheduleDto scheduleDto){
         log.info("scheduleDto {} ",scheduleDto);
         scheduleService.create(scheduleDto);
         log.info("scheduleDto after {} ",scheduleDto);

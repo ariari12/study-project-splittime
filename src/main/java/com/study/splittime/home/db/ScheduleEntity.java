@@ -21,6 +21,7 @@ public class ScheduleEntity {
     private String scheduleName;
 
     private boolean status;
+
     @OneToMany(mappedBy = "scheduleEntity")
     private List<ToDoEntity> todo;
 
