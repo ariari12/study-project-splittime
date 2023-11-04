@@ -17,6 +17,6 @@ public class ToDoApiController {
     public String addTodo(@RequestBody ToDoDto newTodo, RedirectAttributes rttr) throws Exception {
         toDoService.create(newTodo);
 
-        return "redirect:/"; // 홈 화면으로 리다이렉트
+        return "forward:/home"; // 홈 화면으로 포워드
     }
 }
