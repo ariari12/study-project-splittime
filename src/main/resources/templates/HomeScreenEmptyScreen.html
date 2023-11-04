@@ -1,61 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org" >
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./HomeScreenEmptyScreen.css" />
+    <link rel="stylesheet" th:href="@{/global.css}" href="./global.css" />
+    <link rel="stylesheet" th:href="@{/HomeScreenEmptyScreen.css}" href="./HomeScreenEmptyScreen.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto Sans KR:wght@400;700&display=swap"
+      th:href="@{'https://fonts.googleapis.com/css2?family=Noto Sans KR:wght@400;700&display=swap'}"
     />
     <link
       rel="stylesheet"
+      th:href="@{https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap}"
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap"
+
     />
     <link
       rel="stylesheet"
+      th:href="@{https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap}"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap"
+
     />
     <link
       rel="stylesheet"
+      th:href="@{https://fonts.googleapis.com/css2?family=Noto Sans:wght@400&display=swap}"
       href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@400&display=swap"
     />
   </head>
   <body>
     <div class="home-screen-empty-screen1">
       <div class="group-parent1">
-        <img class="group-child19" alt="" src="./public/group-158.svg" />
+        <img class="group-child19" alt=""
+             th:src="@{/public/group-158.svg}"
+             src="./public/group-158.svg" />
 
         <div class="rectangle-wrapper1">
           <div class="group-child20"></div>
         </div>
-        <div class="index3">Index</div>
-        <div class="div49">+ 새 목록</div>
+
+          <div class="index3" th:onclick="|location.href ='/home/addList'|" style="cursor:pointer;">+ 새 목록</div>
+          <div class="div49">삭제</div>
+
       </div>
       <div class="checklist-rafiki-11">
         <img
           class="freepik-background-complete-icon1"
           alt=""
+          th:src="@{/public/freepikbackgroundcompleteinject1.svg}"
           src="./public/freepikbackgroundcompleteinject1.svg"
         />
 
         <img
           class="freepik-checklist-inject-1-icon1"
           alt=""
+          th:src="@{/public/freepikchecklistinject1.svg}"
           src="./public/freepikchecklistinject1.svg"
         />
 
         <img
           class="freepik-character-inject-1-icon1"
           alt=""
+          th:src="@{/public/freepikcharacterinject1.svg}"
           src="./public/freepikcharacterinject1.svg"
         />
 
         <img
           class="checklist-rafiki-1-item"
           alt=""
+          th:src="@{/public/group-162.svg}"
           src="./public/group-162.svg"
         />
 
@@ -69,6 +83,7 @@
             <img
               class="vuesaxboldhome-2-icon3"
               alt=""
+              th:src="@{/public/vuesaxboldhome2.svg}"
               src="./public/vuesaxboldhome2.svg"
             />
 
@@ -81,6 +96,7 @@
             <img
               class="vuesaxoutlineuser-icon3"
               alt=""
+              th:src="@{/public/vuesaxoutlineuser.svg}"
               src="./public/vuesaxoutlineuser.svg"
             />
 
@@ -93,6 +109,7 @@
             <img
               class="vuesaxoutlinecalendar-icon3"
               alt=""
+              th:src="@{/public/vuesaxoutlinecalendar.svg}"
               src="./public/vuesaxoutlinecalendar.svg"
             />
 

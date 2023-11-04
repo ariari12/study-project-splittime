@@ -6,6 +6,7 @@ import com.study.splittime.home.model.ScheduleDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
@@ -16,18 +17,20 @@ public class ScheduleService {
     private final ScheduleRepository scheduleRepository;
     private final ScheduleConverter scheduleConverter;
 
+
     public ScheduleDto findById(Long id) throws Exception {
-        Optional<ScheduleEntity> byId = scheduleRepository.findById(id);
-        if(byId.isPresent()){
-            ScheduleEntity scheduleEntity = byId.get();
+        Optional<ScheduleEntity> entity = scheduleRepository.findById(id);
+        if(entity.isPresent()){
+            ScheduleEntity scheduleEntity = entity.get();
             return scheduleConverter.toDto(scheduleEntity); //엔티티를 dto로 바꿔주고 리턴
         }else {
-            throw new Exception("scheduleEntity id 값이 null 임");
+            return null;
         }
     }
 
-    public void create(ScheduleDto scheduleDto) {
+
+    public ScheduleEntity create(ScheduleDto scheduleDto) {
         ScheduleEntity entity = scheduleConverter.toEntity(scheduleDto);
-        scheduleRepository.save(entity);
+        return scheduleRepository.save(entity);
     }
 }

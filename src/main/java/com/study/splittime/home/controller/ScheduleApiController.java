@@ -14,16 +14,15 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class ScheduleApiController {
     private final ScheduleService scheduleService;
-    @GetMapping("/{id}")
+    @GetMapping("")
     public String home(
-            @PathVariable Long id,
             Model model
     ) throws Exception
     {
-        ScheduleDto scheduleDto = scheduleService.findById(id);
-        model.addAttribute("",scheduleDto.getScheduleName());
+        ScheduleDto scheduleDto = scheduleService.findById(1L); //일단 1로 고정 나중에 시간되면 리스트목록 여러개 추가해보자
+        model.addAttribute("schedule",scheduleDto.getScheduleName());
 
-        return "home/HomeScreen";
+        return "HomeScreenEmptyScreen";
     }
 
     @PostMapping("/addList")
@@ -32,7 +31,7 @@ public class ScheduleApiController {
         scheduleService.create(scheduleDto);
         log.info("scheduleDto after {} ",scheduleDto);
 
-        return "redirect:/1";
+        return "redirect:/home";
     }
 
 }
