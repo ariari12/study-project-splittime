@@ -20,7 +20,7 @@ public class ScheduleApiController {
     ) throws Exception
     {
         ScheduleDto scheduleDto = scheduleService.findById(1L); //일단 1로 고정 나중에 시간되면 리스트목록 여러개 추가해보자
-        model.addAttribute("schedule",scheduleDto.getScheduleName());
+        model.addAttribute("schedule",scheduleDto);
 
         return "HomeScreenEmptyScreen";
     }

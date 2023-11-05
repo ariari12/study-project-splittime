@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/global.css}" href="./global.css" />
     <link rel="stylesheet" th:href="@{/HomeScreenEmptyScreen.css}" href="./HomeScreenEmptyScreen.css" />
     <link
@@ -40,7 +40,11 @@
           <div class="group-child20"></div>
         </div>
 
-          <div class="index3" th:onclick="|location.href ='/home/addList'|" style="cursor:pointer;">+ 새 목록</div>
+          <div class="index3"
+               style="cursor:pointer;"
+               data-bs-toggle="modal"
+               data-bs-target="#todo-add-modal">+ 새 목록</div>
+
           <div class="div49">삭제</div>
 
       </div>
@@ -119,5 +123,79 @@
       </div>
       <div class="home-screen-empty-screen-item"></div>
     </div>
+
+  <!-- modal -->
+      <div class="modal fade" id="todo-add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">일정</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="new-todo" class="col-form-label">할일:</label>
+                <input type="text" class="form-control" id="new-todo">
+              </div>
+              <div class="mb-3">
+                <label for="new-todo-due-date" class="col-form-label">기간:</label>
+                <input type="date" id="new-todo-due-date">
+              </div>
+              <div class="mb-3">
+
+                <div class="form-check">
+                  <label class="form-check-label" for="new-priority-check">
+                    중요
+                  </label>
+                  <input class="form-check-input" type="checkbox"  value="true" id="new-priority-check">
+                </div>
+              </div>
+              <!-- 히든 인풋 -->
+              <input type="hidden" id="new-todo-schedule-id" th:value="${schedule.getId()}">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="new-todo-btn" class="btn btn-primary">추가</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 모달 할일 생성-->
+    <Script>
+      {
+        // 댓글 생성 버튼 변수화
+        const todoCreateBtn = document.querySelector("#new-todo-btn");
+        // 댓글 클릭 이벤트 감지!
+        todoCreateBtn.addEventListener("click", function() {
+          // 새 댓글 객체 생성
+          const toDoJson = {
+            schedule_id: document.querySelector("#new-todo-schedule-id").value,
+            todo: document.querySelector("#new-todo").value,
+            due_date: document.querySelector("#new-todo-due-date").value,
+            priority: document.querySelector("#new-priority-check").value
+
+          };
+          // 댓글 객체 출력
+          console.log(toDoJson);
+          // fetch() - 비동기 통신을 위한 API
+          const url = "/home/addTodo";
+          fetch(url, {
+            method: "post",
+            body: JSON.stringify(toDoJson),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }).then(response => {
+            // http 응답 코드에 따른 메시지 출력
+            const msg = (response.ok) ? "생성 완료" : "생성 실패..!";
+            alert(msg);
+            window.location.reload();
+          });
+        });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   </body>
 </html>

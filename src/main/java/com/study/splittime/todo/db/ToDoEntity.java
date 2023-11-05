@@ -24,10 +24,9 @@ public class ToDoEntity{
     @JoinColumn(name = "schedule_id")
     private ScheduleEntity scheduleEntity;
 
-    private String name;
-    private String description;
+    private String todo;
     private LocalDate created;
     private LocalDate dueDate;
     private boolean completed=false;
-    private boolean status;
+    private boolean priority;
 }
