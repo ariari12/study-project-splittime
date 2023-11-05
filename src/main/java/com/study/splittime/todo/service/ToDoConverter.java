@@ -18,13 +18,12 @@ public class ToDoConverter {
 
         return ToDoDto.builder()
                 .id(toDoEntity.getId())
-                .name(toDoEntity.getName())
+                .todo(toDoEntity.getTodo())
                 .scheduleId(toDoEntity.getScheduleEntity().getId())
-                .description(toDoEntity.getDescription())
                 .created(toDoEntity.getCreated())
                 .dueDate(toDoEntity.getDueDate())
                 .completed(toDoEntity.isCompleted())
-                .status(toDoEntity.isStatus())
+                .priority(toDoEntity.isPriority())
                 .build();
 
     }
@@ -34,13 +33,12 @@ public class ToDoConverter {
         if(scheduleEntity.isPresent()){
             return ToDoEntity.builder()
                     .id(toDoDto.getId())
-                    .name(toDoDto.getName())
+                    .todo(toDoDto.getTodo())
                     .scheduleEntity(scheduleEntity.get())
-                    .description(toDoDto.getDescription())
                     .created(toDoDto.getCreated())
                     .dueDate(toDoDto.getDueDate())
                     .completed(toDoDto.isCompleted())
-                    .status(toDoDto.isStatus())
+                    .priority(toDoDto.isPriority())
                     .build();
         }else {
             throw new Exception("scheduleEntity id 값이 null 임");
