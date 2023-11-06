@@ -13,9 +13,9 @@ import java.util.List;
 public class ToDoService {
     private final ToDoRepository toDoRepository;
     private final ToDoConverter toDoConverter;
-    public void create(ToDoDto newTodo) throws Exception {
+    public ToDoDto create(ToDoDto newTodo) throws Exception {
         ToDoEntity entity = toDoConverter.toEntity(newTodo);
-        toDoRepository.save(entity);
-        //
+        ToDoEntity savedEntity = toDoRepository.save(entity);
+        return toDoConverter.toDto(savedEntity);
     }
 }

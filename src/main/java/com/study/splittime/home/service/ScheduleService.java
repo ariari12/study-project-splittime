@@ -3,6 +3,7 @@ package com.study.splittime.home.service;
 import com.study.splittime.home.db.ScheduleEntity;
 import com.study.splittime.home.db.ScheduleRepository;
 import com.study.splittime.home.model.ScheduleDto;
+import com.study.splittime.todo.model.ToDoDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -27,7 +28,6 @@ public class ScheduleService {
             return null;
         }
     }
-
 
     public ScheduleEntity create(ScheduleDto scheduleDto) {
         ScheduleEntity entity = scheduleConverter.toEntity(scheduleDto);

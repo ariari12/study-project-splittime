@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./HomeScreenScheduleScreen.css" />
+    <link rel="stylesheet" th:href="@{/global.css}" href="./global.css" />
+    <link rel="stylesheet" th:href="@{/HomeScreenScheduleScreen.css}" href="./HomeScreenScheduleScreen.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Noto Sans KR:wght@400;700&display=swap"
@@ -26,7 +26,7 @@
   <body>
     <div class="home-screen-schedule-screen">
       <div class="group-parent">
-        <img class="group-icon" alt="" src="./public/group-158.svg" />
+        <img class="group-icon" alt="" th:src="@{/public/group-158.svg}" src="./public/group-158.svg" />
 
         <div class="rectangle-wrapper">
           <div class="group-child2"></div>
@@ -42,6 +42,7 @@
             <img
               class="vuesaxboldhome-2-icon1"
               alt=""
+              th:src="@{/public/vuesaxboldhome2.svg}"
               src="./public/vuesaxboldhome2.svg"
             />
 
@@ -54,6 +55,7 @@
             <img
               class="vuesaxoutlineuser-icon1"
               alt=""
+              th:src="@{/public/vuesaxoutlineuser.svg}"
               src="./public/vuesaxoutlineuser.svg"
             />
 
@@ -66,7 +68,7 @@
             <img
               class="vuesaxoutlinecalendar-icon1"
               alt=""
-              src="./public/vuesaxoutlinecalendar.svg"
+              th:src="@{/public/vuesaxoutlinecalendar.svg}"
             />
 
             <div class="div37">일정</div>
@@ -77,6 +79,7 @@
         <img
           class="vuesaxoutlinesearch-normal-icon"
           alt=""
+          th:src="@{/public/vuesaxoutlinesearchnormal.svg}"
           src="./public/vuesaxoutlinesearchnormal.svg"
         />
 
@@ -87,6 +90,7 @@
         <img
           class="vuesaxoutlinearrow-down-icon"
           alt=""
+          th:src="@{/public/vuesaxoutlinearrowdown.svg}"
           src="./public/vuesaxoutlinearrowdown.svg"
         />
       </div>
@@ -95,6 +99,7 @@
         <img
           class="vuesaxoutlinearrow-down-icon"
           alt=""
+          th:src="@{/public/vuesaxoutlinearrowdown1.svg}"
           src="./public/vuesaxoutlinearrowdown1.svg"
         />
       </div>
@@ -118,6 +123,7 @@
             <img
               class="mortarboard-1-icon"
               alt=""
+              th:src="@{/public/mortarboard-1.svg}"
               src="./public/mortarboard-1.svg"
             />
 
@@ -127,6 +133,7 @@
             <img
               class="vuesaxoutlineflag-icon"
               alt=""
+              th:src="@{/public/vuesaxoutlineflag.svg}"
               src="./public/vuesaxoutlineflag.svg"
             />
 
@@ -146,6 +153,7 @@
             <img
               class="mortarboard-1-icon"
               alt=""
+              th:src="@{/public/home-2-1.svg}"
               src="./public/home-2-1.svg"
             />
 
@@ -155,6 +163,7 @@
             <img
               class="vuesaxoutlineflag-icon"
               alt=""
+              th:src="@{/public/vuesaxoutlineflag1.svg}"
               src="./public/vuesaxoutlineflag1.svg"
             />
 
@@ -174,6 +183,7 @@
             <img
               class="mortarboard-1-icon"
               alt=""
+              th:src="@{/public/briefcase-1.svg}"
               src="./public/briefcase-1.svg"
             />
 
@@ -183,6 +193,7 @@
             <img
               class="vuesaxoutlineflag-icon"
               alt=""
+              th:src="@{/public/vuesaxoutlineflag2.svg}"
               src="./public/vuesaxoutlineflag2.svg"
             />
 
