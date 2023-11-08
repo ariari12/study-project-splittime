@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,5 +18,12 @@ public class ToDoService {
         ToDoEntity entity = toDoConverter.toEntity(newTodo);
         ToDoEntity savedEntity = toDoRepository.save(entity);
         return toDoConverter.toDto(savedEntity);
+    }
+
+    public ToDoDto deleteById(Long id) throws Exception {
+        Optional<ToDoEntity> toDoEntity = toDoRepository.findById(id);
+        ToDoEntity findTarget = toDoEntity.orElseThrow();
+        toDoRepository.deleteById(id);
+        return toDoConverter.toDto(findTarget);
     }
 }

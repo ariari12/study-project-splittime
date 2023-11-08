@@ -2,17 +2,20 @@ package com.study.splittime.home.controller;
 
 import com.study.splittime.home.model.ScheduleDto;
 import com.study.splittime.home.service.ScheduleService;
+import com.study.splittime.todo.model.ToDoDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @Slf4j
 @RequestMapping("/home")
 @RequiredArgsConstructor
-public class ScheduleApiController {
+public class ScheduleController {
     private final ScheduleService scheduleService;
     @GetMapping("")
     public String home(
@@ -24,7 +27,10 @@ public class ScheduleApiController {
             model.addAttribute("schedule",scheduleDto);
             return "HomeScreenEmptyScreen";
         }else{
+            List<ToDoDto> todoList = scheduleDto.getToDoList();
+            log.info("=========================================todoList.get={}",todoList.get(0).getTodo());
             model.addAttribute("schedule",scheduleDto);
+            model.addAttribute("todoList",todoList);
             return "HomeScreenScheduleScreen";
         }
     }
