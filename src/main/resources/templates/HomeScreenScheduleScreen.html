@@ -23,6 +23,12 @@
       href="https://fonts.googleapis.com/css2?family=Noto Sans:wght@400&display=swap"
     />
   </head>
+  <style>
+    table tbody tr:hover {
+      background-color: red;
+      cursor:pointer;
+    }
+  </style>
   <body>
     <div class="home-screen-schedule-screen">
       <div class="group-parent">
@@ -35,7 +41,9 @@
              style="cursor:pointer;"
              data-bs-toggle="modal"
              data-bs-target="#todo-add-modal">+ 새 목록</div>
-        <div class="div35">삭제</div>
+        <div class="div35"
+             style="cursor:pointer;"
+             id="todo-delete">삭제</div>
       </div>
       <div class="botton-navigation-bar3">
         <div class="botton-navigation-bar-child2"></div>
@@ -107,7 +115,7 @@
         />
       </div>
       <div style=" overflow: auto; margin-top: 330px; margin-left: 600px; max-width : 1100px; max-height: 450px">
-        <table class="table table-dark table-striped">
+        <table id="table" class="table table-dark table-striped">
           <thead>
           <tr>
             <th scope="col"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
@@ -118,7 +126,8 @@
           </tr>
           </thead>
           <tbody>
-          <tr th:each="todoDto : ${todoList}">
+          <tr th:each="todoDto : ${todoList}" >
+            <td style="display: none" th:type="hidden" th:text="${todoDto.getId()}"></td>
             <th scope="row"><input class="form-check-input" type="checkbox" th:value="${todoDto.isPriority()}" id="flexCheckDefault"></th>
             <td th:text="${todoDto.getTodo()}">할일</td>
             <td th:datetime="${todoDto.getDueDate()}">기간</td>
@@ -165,15 +174,22 @@
         </div>
       </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- 모달 할일 생성-->
 
+
     <Script>
+      //테이블 id값을 저장할 전역변수
+      var id="";
+
+
+      <!-- 생성 -->
       {
-        // 댓글 생성 버튼 변수화
+        //  생성 버튼 변수화
         const todoCreateBtn = document.querySelector("#new-todo-btn");
-        // 댓글 클릭 이벤트 감지!
+        // 클릭 이벤트 감지!
         todoCreateBtn.addEventListener("click", function() {
-          // 새 댓글 객체 생성
+          // 새 객체 생성
           const toDoJson = {
             schedule_id: document.querySelector("#new-todo-schedule-id").value,
             todo: document.querySelector("#new-todo").value,
@@ -198,6 +214,50 @@
             window.location.reload();
           });
         });
+      }
+
+      // 테이블의 Row 클릭시 값 가져오기
+      $("#table tr").click(function(){
+
+        // 현재 클릭된 Row(<tr>)
+        var tr = $(this);
+        var td = tr.children();
+
+        // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
+        console.log("클릭한 Row의 모든 데이터 : "+tr.text());
+
+        // td.eq(index)를 통해 값을 가져올 수도 있다.
+        id = td.eq(0).text();
+
+
+      });
+
+      <!-- 댓글 삭제 -->
+      {
+
+        // 삭제 버튼 선택
+        const todoDeleteBtns = document.querySelectorAll(".todo-delete");
+
+          // 각 버튼의 이벤트 처리를 등록
+        todoDeleteBtns.addEventListener("click", () => {
+
+
+
+          console.log(`삭제 버튼 클릭: ${id}번 댓글`);
+          console.log()
+          // 삭제 API 호출 및 처리
+          const url = `/home/delete/${id}`;
+          fetch(url, {
+            method: "DELETE"
+          }).then(response => {
+            // 댓글 삭제 실패 처리
+            if (!response.ok) {
+              alert("할일 삭제 실패..!");
+            }
+              alert("할일 삭제 성공");
+              window.location.reload();
+            });
+          });
       }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
