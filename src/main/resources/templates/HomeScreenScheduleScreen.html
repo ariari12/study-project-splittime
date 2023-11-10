@@ -127,10 +127,10 @@
           </thead>
           <tbody>
           <tr th:each="todoDto : ${todoList}" >
-            <td style="display: none" th:type="hidden" th:text="${todoDto.getId()}"></td>
             <th scope="row"><input class="form-check-input" type="checkbox" th:value="${todoDto.isPriority()}" id="flexCheckDefault"></th>
             <td th:text="${todoDto.getTodo()}">할일</td>
             <td th:datetime="${todoDto.getDueDate()}">기간</td>
+            <td style="display: none" th:type="hidden" th:text="${todoDto.getId()}"></td>
           </tr>
           </tbody>
         </table>
@@ -227,8 +227,8 @@
         console.log("클릭한 Row의 모든 데이터 : "+tr.text());
 
         // td.eq(index)를 통해 값을 가져올 수도 있다.
-        id = td.eq(0).text();
-
+        id = td.eq(3).text();
+        alert(id)
 
       });
 
@@ -236,24 +236,21 @@
       {
 
         // 삭제 버튼 선택
-        const todoDeleteBtns = document.querySelectorAll(".todo-delete");
+        const todoDeleteBtns = document.querySelector("#todo-delete");
 
           // 각 버튼의 이벤트 처리를 등록
         todoDeleteBtns.addEventListener("click", () => {
-
-
-
-          console.log(`삭제 버튼 클릭: ${id}번 댓글`);
+          console.log("삭제 버튼 클릭 id="+id);
           console.log()
           // 삭제 API 호출 및 처리
-          const url = `/home/delete/${id}`;
+          const url = "/home/delete/"+id;
           fetch(url, {
             method: "DELETE"
           }).then(response => {
             // 댓글 삭제 실패 처리
             if (!response.ok) {
               alert("할일 삭제 실패..!");
-            }
+            }else
               alert("할일 삭제 성공");
               window.location.reload();
             });

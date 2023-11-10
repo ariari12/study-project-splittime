@@ -4,12 +4,14 @@ import com.study.splittime.todo.db.ToDoEntity;
 import com.study.splittime.todo.db.ToDoRepository;
 import com.study.splittime.todo.model.ToDoDto;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 @RequiredArgsConstructor
 public class ToDoService {
     private final ToDoRepository toDoRepository;
@@ -21,6 +23,7 @@ public class ToDoService {
     }
 
     public ToDoDto deleteById(Long id) throws Exception {
+        log.info("deleteId={}",id);
         Optional<ToDoEntity> toDoEntity = toDoRepository.findById(id);
         ToDoEntity findTarget = toDoEntity.orElseThrow();
         toDoRepository.deleteById(id);
