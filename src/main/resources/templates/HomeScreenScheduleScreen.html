@@ -175,10 +175,47 @@
         </div>
       </div>
     </div>
+    <!-- 수정 modal -->
+    <div class="modal fade" id="todo-edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel1">일정</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="edit-todo" class="col-form-label">할일:</label>
+                <input type="text" class="form-control" id="edit-todo">
+              </div>
+              <div class="mb-3">
+                <label for="edit-todo-due-date" class="col-form-label">기간:</label>
+                <input type="date" id="edit-todo-due-date">
+              </div>
+              <div class="mb-3">
+
+                <div class="form-check">
+                  <label class="form-check-label" for="edit-priority-check">
+                    중요
+                  </label>
+                  <input class="form-check-input" type="checkbox"  value="true" id="edit-priority-check">
+                </div>
+              </div>
+              <!-- 히든 인풋 -->
+              <input type="hidden" id="edit-todo-schedule-id" th:value="${schedule.getId()}">
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="edit-todo-btn" class="btn btn-primary">수정</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- 모달 할일 생성-->
-
-
     <Script>
       //테이블 id값을 저장할 전역변수
       var id="";
@@ -192,7 +229,7 @@
         todoCreateBtn.addEventListener("click", function() {
           // 새 객체 생성
           const toDoJson = {
-            schedule_id: document.querySelector("#new-todo-schedule-id").value,
+            schedule_id: document.querySelector("#edit-todo-schedule-id").value,
             todo: document.querySelector("#new-todo").value,
             due_date: document.querySelector("#new-todo-due-date").value,
             priority: document.querySelector("#new-priority-check").value
@@ -233,36 +270,28 @@
 
       });
       <!-- 수정 -->
-      // {
-      //   // 수정 완료 버튼
-      //   const commentUpdateBtn = document.querySelector("#comment-update-btn");
-      //   // 클릭 이벤트 처리
-      //   commentUpdateBtn.addEventListener("click", function () {
-      //
-      //     const comment = {
-      //       id: document.querySelector("#edit-comment-id").value,
-      //       name: document.querySelector("#edit-comment-name").value,
-      //       body: document.querySelector("#edit-comment-body").value,
-      //       article_id: document.querySelector("#edit-comment-article-id").value
-      //     };
-      //     console.log(comment);
-      //     // 수정 REST API 호출 - fetch()
-      //     const url = "/api/comments/" + comment.id;
-      //     fetch(url, {
-      //       method: "PATCH",
-      //       body: JSON.stringify(comment),
-      //       headers: {
-      //         "Content-Type": "application/json"
-      //       }
-      //     }).then(response => {
-      //       // http 응답 코드에 따른 메시지 출력
-      //       const msg = (response.ok) ? "댓글이 수정 되었습니다." : "댓글 수정 실패..!";
-      //       alert(msg);
-      //       // 현재 페이지를 새로고침
-      //       window.location.reload();
-      //     });
-      //   });
-      // }
+      {
+        // 모달 요소 선택
+        const todoEditModal = document.querySelector("#edit-todo-btn");
+
+        // 모달 이벤트 감지
+        todoEditModal.addEventListener("click", function (event) {
+          console.log("클릭되었습니다")
+          // 트리거 버튼 선택
+          const triggerBtn = event.relatedTarget;
+          // 데이터 가져오기
+          const checkbox = document.getElementById("#table").getElementsByTagName("tr")[id].getElementsByTagName("th")[0]
+          const todo = document.getElementById("#table").getElementsByTagName("tr")[id].getElementsByTagName("td")[0]
+          const dueDate = document.getElementById("#table").getElementsByTagName("tr")[id].getElementsByTagName("td")[1]
+          const todoId = document.getElementById("#table").getElementsByTagName("tr")[id].getElementsByTagName("td")[2]
+          //console.log(`${id}, ${name}, ${body}, ${articleId}`);
+          // 데이터를 반영
+          document.querySelector("#edit-priority-check").value = checkbox;
+          document.querySelector("#edit-todo").value = todo;
+          document.querySelector("#edit-todo-due-date").value = dueDate;
+          document.querySelector("#edit-todo-schedule-id").value = todoId;
+        });
+      }
 
       <!-- 삭제 -->
       {
