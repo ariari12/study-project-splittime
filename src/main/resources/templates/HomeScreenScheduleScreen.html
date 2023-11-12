@@ -32,18 +32,19 @@
   <body>
     <div class="home-screen-schedule-screen">
       <div class="group-parent">
-        <img class="group-icon" alt="" th:src="@{/public/group-158.svg}" src="./public/group-158.svg" />
+        <div class="group-icon"
+             style="cursor:pointer; top: 45.5px"
+             data-bs-toggle="modal"
+             data-bs-target="#todo-add-modal">+ 새 목록</div>
 
-        <div class="rectangle-wrapper">
-          <div class="group-child2"></div>
-        </div>
         <div class="index1"
              style="cursor:pointer;"
              data-bs-toggle="modal"
-             data-bs-target="#todo-add-modal">+ 새 목록</div>
+             data-bs-target="#todo-edit-modal">수정</div>
         <div class="div35"
              style="cursor:pointer;"
              id="todo-delete">삭제</div>
+
       </div>
       <div class="botton-navigation-bar3">
         <div class="botton-navigation-bar-child2"></div>
@@ -228,11 +229,42 @@
 
         // td.eq(index)를 통해 값을 가져올 수도 있다.
         id = td.eq(3).text();
-        alert(id)
+        console.log(id);
 
       });
+      <!-- 수정 -->
+      // {
+      //   // 수정 완료 버튼
+      //   const commentUpdateBtn = document.querySelector("#comment-update-btn");
+      //   // 클릭 이벤트 처리
+      //   commentUpdateBtn.addEventListener("click", function () {
+      //
+      //     const comment = {
+      //       id: document.querySelector("#edit-comment-id").value,
+      //       name: document.querySelector("#edit-comment-name").value,
+      //       body: document.querySelector("#edit-comment-body").value,
+      //       article_id: document.querySelector("#edit-comment-article-id").value
+      //     };
+      //     console.log(comment);
+      //     // 수정 REST API 호출 - fetch()
+      //     const url = "/api/comments/" + comment.id;
+      //     fetch(url, {
+      //       method: "PATCH",
+      //       body: JSON.stringify(comment),
+      //       headers: {
+      //         "Content-Type": "application/json"
+      //       }
+      //     }).then(response => {
+      //       // http 응답 코드에 따른 메시지 출력
+      //       const msg = (response.ok) ? "댓글이 수정 되었습니다." : "댓글 수정 실패..!";
+      //       alert(msg);
+      //       // 현재 페이지를 새로고침
+      //       window.location.reload();
+      //     });
+      //   });
+      // }
 
-      <!-- 댓글 삭제 -->
+      <!-- 삭제 -->
       {
 
         // 삭제 버튼 선택
