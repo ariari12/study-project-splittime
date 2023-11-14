@@ -123,9 +123,9 @@
           </thead>
           <tbody>
           <tr th:each="todoDto : ${todoList}" >
-            <th scope="row"><input class="form-check-input" type="checkbox" th:value="${todoDto.isPriority()}" id="flexCheckDefault"></th>
+            <th scope="row"><input class="form-check-input" type="checkbox" th:checked="${todoDto.isPriority()}" id="flexCheckDefault"></th>
             <td th:text="${todoDto.getTodo()}">할일</td>
-            <td th:datetime="${todoDto.getDueDate()}">기간</td>
+            <td th:date="${todoDto.getDueDate()}">기간</td>
             <td style="display: none" th:type="hidden" th:text="${todoDto.getId()}"></td>
           </tr>
           </tbody>
@@ -151,12 +151,11 @@
                 <input type="date" id="new-todo-due-date">
               </div>
               <div class="mb-3">
-
                 <div class="form-check">
                   <label class="form-check-label" for="new-priority-check">
                     중요
                   </label>
-                  <input class="form-check-input" type="checkbox"  value="true" id="new-priority-check">
+                  <input class="form-check-input" type="checkbox" id="new-priority-check">
                 </div>
               </div>
               <!-- 히든 인풋 -->
@@ -230,7 +229,7 @@
               schedule_id: document.querySelector("#edit-todo-schedule-id").value,
               todo: document.querySelector("#new-todo").value,
               due_date: document.querySelector("#new-todo-due-date").value,
-              priority: document.querySelector("#new-priority-check").value
+              priority: document.querySelector("#new-priority-check").checked
 
             };
             // 댓글 객체 출력
