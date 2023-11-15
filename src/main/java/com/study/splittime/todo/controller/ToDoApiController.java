@@ -18,6 +18,11 @@ public class ToDoApiController {
         ToDoDto savedDto= toDoService.create(newTodo);
         return ResponseEntity.status(HttpStatus.OK).body(savedDto);
     }
+    @PatchMapping("/editTodo")
+    public ResponseEntity<ToDoDto> editTodo(@RequestBody ToDoDto editTodo) throws Exception {
+        ToDoDto updatedDto = toDoService.update(editTodo);
+        return ResponseEntity.status(HttpStatus.OK).body(updatedDto);
+    }
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<ToDoDto> deleteById(@PathVariable Long id) throws Exception {
         ToDoDto toDoDto = toDoService.deleteById(id);
