@@ -33,6 +33,7 @@
              data-bs-target="#todo-add-modal">+ 새 목록</div>
 
         <div class="index1"
+             id="todo-edit"
              style="cursor:pointer;"
              data-bs-toggle="modal"
              data-bs-target="#todo-edit-modal">수정</div>
@@ -189,7 +190,6 @@
                 <input type="date" id="edit-todo-due-date">
               </div>
               <div class="mb-3">
-
                 <div class="form-check">
                   <label class="form-check-label" for="edit-priority-check">
                     중요
@@ -199,7 +199,7 @@
               </div>
               <!-- 히든 인풋 -->
               <input type="hidden" id="edit-todo-schedule-id" th:value="${schedule.getId()}">
-              <input type="hidden" id="edit-todo-id" value="">
+              <input type="hidden" id="edit-todo-id">
 
 
             </form>
@@ -296,14 +296,13 @@
         <!-- 수정 -->
         {
           // 모달 요소 선택
-          const todoEditModal = document.querySelector("#todo-edit-modal");//
+          const todoEditModal = document.querySelector("#todo-edit");//
           const todoEditBtn = document.querySelector("#edit-todo-btn");
 
           // 모달 이벤트 감지
-          todoEditModal.addEventListener("click", function (event) {
+          todoEditModal.addEventListener("click", function () {
             console.log("클릭되었습니다")
-            // 트리거 버튼 선택
-            const triggerBtn = event.relatedTarget;
+
             // 데이터 가져오기
             //const checkbox = document.getElementById("#table").getElementsByTagName("tr")[id].getElementsByTagName("th")[0]
             const todo = clickedRowValues[0];
@@ -316,28 +315,34 @@
             document.querySelector("#edit-todo-due-date").value = dueDate;
             document.querySelector("#edit-todo-id").value = todoId;
 
-            todoEditBtn.addEventListener("click",function(){
-              // 객체 출력
-              console.log(toDoJson);
-              // fetch() - 비동기 통신을 위한 API
-              const url = "/home/addTodo";
-              fetch(url, {
-                method: "patch",
-                body: JSON.stringify(toDoJson),
-                headers: {
-                  "Content-Type": "application/json"
-                }
-              }).then(response => {
-                // http 응답 코드에 따른 메시지 출력
-                const msg = (response.ok) ? "수정 완료" : "수정 실패..!";
-                alert(msg);
-                window.location.reload();
-              });
+            todoEditBtn.addEventListener("click", editButtonClick);
 
-            });
+          });
+        }
 
+        function editButtonClick(){
+          const toDoJson = {
+            id : document.querySelector("#edit-todo-id").value,
+            todo: document.querySelector("#edit-todo").value,
+            due_date: document.querySelector("#edit-todo-due-date").value,
+            priority: document.querySelector("#edit-priority-check").checked
 
-
+          };
+          // 객체 출력
+          console.log(toDoJson);
+          // fetch() - 비동기 통신을 위한 API
+          const url = "/home/editTodo"+toDoJson.id;
+          fetch(url, {
+            method: "patch",
+            body: JSON.stringify(toDoJson),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          }).then(response => {
+            // http 응답 코드에 따른 메시지 출력
+            const msg = (response.ok) ? "수정 완료" : "수정 실패..!";
+            alert(msg);
+            window.location.reload();
           });
         }
 
