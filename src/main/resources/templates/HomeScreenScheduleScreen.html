@@ -331,9 +331,9 @@
           // 객체 출력
           console.log(toDoJson);
           // fetch() - 비동기 통신을 위한 API
-          const url = "/home/editTodo"+toDoJson.id;
+          const url = "/home/editTodo/"+toDoJson.id;
           fetch(url, {
-            method: "patch",
+            method: "put",
             body: JSON.stringify(toDoJson),
             headers: {
               "Content-Type": "application/json"

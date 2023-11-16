@@ -25,11 +25,13 @@ public class ToDoService {
     }
 
     @Transactional
-    public ToDoDto update(ToDoDto editTodo) throws Exception {
-        var entity = toDoConverter.toEntity(editTodo);
+    public ToDoDto update(ToDoDto editTodo, Long id) throws Exception {
+        ToDoDto dto = toDoConverter.patch(editTodo, id);
+        log.info("dto = {}",dto);
+        var entity = toDoConverter.toEntity(dto);
         if (entity != null) {
-            entity = toDoRepository.save(entity);
-            return toDoConverter.toDto(entity);
+            ToDoEntity saved = toDoRepository.save(entity);
+            return toDoConverter.toDto(saved);
         } else {
             throw new IllegalArgumentException("Entity가 null이라 update 못함");
         }
