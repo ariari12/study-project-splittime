@@ -34,6 +34,24 @@ public class ScheduleController {
             return "HomeScreenScheduleScreen";
         }
     }
+    @GetMapping("/calendar")
+    public String calendarView(
+            Model model
+    ) throws Exception
+    {
+        ScheduleDto scheduleDto = scheduleService.findById(1L); //일단 1로 고정 나중에 시간되면 리스트목록 여러개 추가해보자
+        if (scheduleDto.getToDoList().isEmpty()){
+            model.addAttribute("schedule",scheduleDto);
+        }else {
+            List<ToDoDto> todoList = scheduleDto.getToDoList();
+            log.info("=========================================todoList.get={}",todoList.get(0).getTodo());
+            model.addAttribute("todoList",todoList);
+            model.addAttribute("schedule",scheduleDto);
+        }
+
+        return "Calendar";
+
+    }
 
     @PostMapping("/addList")
     public String create(@RequestBody ScheduleDto scheduleDto){

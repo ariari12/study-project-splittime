@@ -80,7 +80,7 @@
             <img
               class="vuesaxoutlinecalendar-icon1"
               style="cursor: pointer"
-              onclick=""
+              onclick="calendarClick()"
               alt=""
               th:src="@{/public/vuesaxoutlinecalendar.svg}"
             />
@@ -132,8 +132,7 @@
           <tr th:each="todoDto : ${todoList}" >
             <th scope="row"><input class="form-check-input" type="checkbox" th:checked="${todoDto.isPriority()}" id="flexCheckDefault"></th>
             <td th:text="${todoDto.getTodo()}">할일</td>
-            <td th:if="${todoDto.getDueDate() != null}" th:text="${#temporals.format(todoDto.getDueDate(), 'yyyy-MM-dd')}" />
-            <td th:unless="${todoDto.getDueDate() != null}" th:text="기간 없음" />
+            <td th:text="${#temporals.format(todoDto.getDueDate(), 'yyyy-MM-dd')}" />
             <td style="display: none" th:type="hidden" th:text="${todoDto.getId()}"></td>
           </tr>
           </tbody>
@@ -220,6 +219,9 @@
     <script>
       function homeClick(){
         window.location.href = "/home";
+      }
+      function calendarClick(){
+        window.location.href = "/home/calendar";
       }
     </script>
 

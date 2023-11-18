@@ -117,7 +117,7 @@
             <img
               class="vuesaxoutlinecalendar-icon3"
               style="cursor: pointer"
-              onclick=""
+              onclick="calendarClick()"
               alt=""
               th:src="@{/public/vuesaxoutlinecalendar.svg}"
               src="./public/vuesaxoutlinecalendar.svg"
@@ -207,6 +207,9 @@
 
       function homeClick(){
         window.location.href = "/home";
+      }
+      function calendarClick(){
+        window.location.href = "/home/calendar";
       }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
