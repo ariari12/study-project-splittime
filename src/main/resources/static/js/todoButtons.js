@@ -15,6 +15,7 @@
             const toDoJson = {
                 schedule_id: document.querySelector("#edit-todo-schedule-id").value,
                 todo: document.querySelector("#new-todo").value,
+                created : new Date(),
                 due_date: document.querySelector("#new-todo-due-date").value,
                 priority: document.querySelector("#new-priority-check").checked
 

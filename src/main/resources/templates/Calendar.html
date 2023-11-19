@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="/fullcalendar-6.1.9/dist/index.global.js"></script>
-    <script>
+    <script th:inline="javascript">
 
         document.addEventListener('DOMContentLoaded', function() {
             var calendarEl = document.getElementById('calendar');
@@ -28,29 +28,28 @@
                 editable: true,
                 dayMaxEvents: true, // allow "more" link when too many events
                 events: [
-                    <!-- th:each를 사용한 예시 -->
-                    // <tr th:each="event : ${events}">
-                    //     <!-- 이 부분에서 event를 사용하여 각 이벤트의 속성에 접근 -->
-                    //     <td th:text="${event.title}">Title</td>
-                    //     <td th:text="${event.start}">Start Date</td>
-                    //     <td th:text="${event.end}">End Date</td>
-                    // </tr>,
+                    /*[# th:each="todoDto : ${schedule.toDoList}"]*/
+                    {
+                        title: /*[(${todoDto.todo})]*/ 'Conference',
+                        start: /*[(${todoDto.created})]*/ '2023-01-11',
+                        end: /*[(${todoDto.dueDate})]*/ '2023-01-13'
+                    },
                     /*[/]*/
-                    {
-                        title: 'Conference',
-                        start: '2023-01-11',
-                        end: '2023-01-13'
-                    },
-                    {
-                        title: 'Meeting',
-                        start: '2023-01-12T10:30:00',
-                        end: '2023-01-12T12:30:00'
-                    },
-                    {
-                        title: 'Click for Google',
-                        url: 'http://google.com/',
-                        start: '2023-01-28'
-                    }
+                    // {
+                    //     title: 'Conference',
+                    //     start: '2023-01-11',
+                    //     end: '2023-01-13'
+                    // },
+                    // {
+                    //     title: 'Meeting',
+                    //     start: '2023-01-12T10:30:00',
+                    //     end: '2023-01-12T12:30:00'
+                    // },
+                    // {
+                    //     title: 'Click for Google',
+                    //     url: 'http://google.com/',
+                    //     start: '2023-01-28'
+                    // }
                 ]
             });
 

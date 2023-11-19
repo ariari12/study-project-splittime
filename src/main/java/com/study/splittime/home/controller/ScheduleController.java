@@ -28,7 +28,7 @@ public class ScheduleController {
             return "HomeScreenEmptyScreen";
         }else{
             List<ToDoDto> todoList = scheduleDto.getToDoList();
-            log.info("=========================================todoList.get={}",todoList.get(0).getTodo());
+            log.info("=========================================todoList.get={}",todoList.stream().iterator());
             model.addAttribute("schedule",scheduleDto);
             model.addAttribute("todoList",todoList);
             return "HomeScreenScheduleScreen";
