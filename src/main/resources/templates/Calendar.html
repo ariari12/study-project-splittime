@@ -30,9 +30,9 @@
                 events: [
                     /*[# th:each="todoDto : ${schedule.toDoList}"]*/
                     {
-                        title: /*[(${todoDto.todo})]*/ 'Conference',
-                        start: /*[(${todoDto.created})]*/ '2023-01-11',
-                        end: /*[(${todoDto.dueDate})]*/ '2023-01-13'
+                        title: '[(${todoDto.todo})]',
+                        start: '[(${#temporals.format(todoDto.getCreated(), \'yyyy-MM-dd\')})]',
+                        end: '[(${#temporals.format(todoDto.getDueDate(), \'yyyy-MM-dd\')})]'
                     },
                     /*[/]*/
                     // {

@@ -125,13 +125,15 @@
               <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
             </svg></th>
             <th scope="col">할일</th>
-            <th scope="col">기간</th>
+            <th scope="col">시작</th>
+            <th scope="col">마감</th>
           </tr>
           </thead>
           <tbody>
           <tr th:each="todoDto : ${todoList}" >
             <th scope="row"><input class="form-check-input" type="checkbox" th:checked="${todoDto.isPriority()}" id="flexCheckDefault"></th>
             <td th:text="${todoDto.getTodo()}">할일</td>
+            <td th:text="${#temporals.format(todoDto.getCreated(), 'yyyy-MM-dd')}" />
             <td th:text="${#temporals.format(todoDto.getDueDate(), 'yyyy-MM-dd')}" />
             <td style="display: none" th:type="hidden" th:text="${todoDto.getId()}"></td>
           </tr>
@@ -154,8 +156,12 @@
                 <input type="text" class="form-control" id="new-todo">
               </div>
               <div class="mb-3">
-                <label for="new-todo-due-date" class="col-form-label">기간:</label>
-                <input type="date" id="new-todo-due-date">
+                <label for="new-todo-create-date" class="col-form-label">시작:</label>
+                <input type="datetime-local" id="new-todo-create-date">
+              </div>
+              <div class="mb-3">
+                <label for="new-todo-due-date" class="col-form-label">마감:</label>
+                <input type="datetime-local" id="new-todo-due-date">
               </div>
               <div class="mb-3">
                 <div class="form-check">
@@ -191,8 +197,12 @@
                 <input type="text" class="form-control" id="edit-todo">
               </div>
               <div class="mb-3">
-                <label for="edit-todo-due-date" class="col-form-label">기간:</label>
-                <input type="date" id="edit-todo-due-date">
+                <label for="edit-todo-create-date" class="col-form-label">시작:</label>
+                <input type="datetime-local" id="edit-todo-create-date">
+              </div>
+              <div class="mb-3">
+                <label for="edit-todo-due-date" class="col-form-label">마감:</label>
+                <input type="datetime-local" id="edit-todo-due-date">
               </div>
               <div class="mb-3">
                 <div class="form-check">

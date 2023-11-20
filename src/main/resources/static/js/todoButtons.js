@@ -15,7 +15,7 @@
             const toDoJson = {
                 schedule_id: document.querySelector("#edit-todo-schedule-id").value,
                 todo: document.querySelector("#new-todo").value,
-                created : new Date(),
+                created : document.querySelector("#new-todo-create-date").value,
                 due_date: document.querySelector("#new-todo-due-date").value,
                 priority: document.querySelector("#new-priority-check").checked
 
@@ -91,9 +91,10 @@
             // 데이터 가져오기
             //const checkbox = document.getElementById("#table").getElementsByTagName("tr")[id].getElementsByTagName("th")[0]
             const todo = clickedRowValues[0];
-            const dueDate = clickedRowValues[1];
-            const todoId = clickedRowValues[2];
-            console.log(`${todo}, ${dueDate}, ${todoId}`);
+            const createDate = clickedRowValues[1];
+            const dueDate = clickedRowValues[2];
+            const todoId = clickedRowValues[3];
+            console.log(`${todo}, ${createDate}, ${dueDate}, ${todoId}`);
             // 데이터를 반영
             //document.querySelector("#edit-priority-check").value = checkbox;
             document.querySelector("#edit-todo").value = todo;
@@ -109,6 +110,7 @@
         const toDoJson = {
             id : document.querySelector("#edit-todo-id").value,
             todo: document.querySelector("#edit-todo").value,
+            create_date: document.querySelector("#edit-todo-due-date").value,
             due_date: document.querySelector("#edit-todo-due-date").value,
             priority: document.querySelector("#edit-priority-check").checked
 

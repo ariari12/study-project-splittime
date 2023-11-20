@@ -145,11 +145,15 @@
                 <input type="text" class="form-control" id="new-todo">
               </div>
               <div class="mb-3">
-                <label for="new-todo-due-date" class="col-form-label">기간:</label>
-                <input type="date" id="new-todo-due-date">
+                <label for="new-todo-create-date" class="col-form-label">시작:</label>
+                <input type="datetime-local" id="new-todo-create-date">
               </div>
               <div class="mb-3">
+                <label for="new-todo-due-date" class="col-form-label">마감:</label>
+                <input type="datetime-local" id="new-todo-due-date">
+              </div>
 
+              <div class="mb-3">
                 <div class="form-check">
                   <label class="form-check-label" for="new-priority-check">
                     중요
@@ -179,6 +183,7 @@
           const toDoJson = {
             schedule_id: document.querySelector("#new-todo-schedule-id").value,
             todo: document.querySelector("#new-todo").value,
+            created: document.querySelector("#new-todo-create-date").value,
             due_date: document.querySelector("#new-todo-due-date").value,
             priority: document.querySelector("#new-priority-check").value
 
