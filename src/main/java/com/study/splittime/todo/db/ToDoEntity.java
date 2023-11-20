@@ -21,6 +21,7 @@ public class ToDoEntity{
     private Long id;
 
     @ManyToOne
+    @ToString.Exclude
     @JoinColumn(name = "schedule_id")
     private ScheduleEntity scheduleEntity;
 
