@@ -1,7 +1,6 @@
 package com.study.splittime.home.db;
 
 import com.study.splittime.todo.db.ToDoEntity;
-import com.study.splittime.todo.model.ToDoDto;
 import lombok.*;
 
 import javax.persistence.*;

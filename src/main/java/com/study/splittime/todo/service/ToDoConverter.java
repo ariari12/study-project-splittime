@@ -2,7 +2,6 @@ package com.study.splittime.todo.service;
 
 import com.study.splittime.home.db.ScheduleEntity;
 import com.study.splittime.home.db.ScheduleRepository;
-import com.study.splittime.home.model.ScheduleDto;
 import com.study.splittime.todo.db.ToDoEntity;
 import com.study.splittime.todo.model.ToDoDto;
 import lombok.RequiredArgsConstructor;

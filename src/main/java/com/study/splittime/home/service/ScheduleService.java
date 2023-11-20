@@ -3,13 +3,10 @@ package com.study.splittime.home.service;
 import com.study.splittime.home.db.ScheduleEntity;
 import com.study.splittime.home.db.ScheduleRepository;
 import com.study.splittime.home.model.ScheduleDto;
-import com.study.splittime.todo.model.ToDoDto;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.PostConstruct;
-import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
