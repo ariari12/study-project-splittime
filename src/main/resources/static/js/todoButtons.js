@@ -142,8 +142,9 @@
         // 각 버튼의 이벤트 처리를 등록
         todoDeleteBtns.addEventListener("click", () => {
             console.log("삭제 버튼 클릭 ="+clickedRowValues);
+            console.log("삭제 버튼 클릭 id ="+clickedRowValues[3]);
             // 삭제 API 호출 및 처리
-            const url = "/home/delete/"+clickedRowValues[2];
+            const url = "/home/delete/"+clickedRowValues[3];
             fetch(url, {
                 method: "DELETE"
             }).then(response => {
