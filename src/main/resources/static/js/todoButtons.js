@@ -64,20 +64,6 @@
             }
         });
     }
-    // $("#table tr").click(function(){
-    //
-    //   // 현재 클릭된 Row(<tr>)
-    //   var tr = $(this);
-    //   var td = tr.children();
-    //
-    //   // tr.text()는 클릭된 Row 즉 tr에 있는 모든 값을 가져온다.
-    //   console.log("클릭한 Row의 모든 데이터 : "+tr.text());
-    //
-    //   // td.eq(index)를 통해 값을 가져올 수도 있다.
-    //   id = td.eq(3).text();
-    //   console.log(id);
-    //
-    // });
     <!-- 수정 -->
     {
         // 모달 요소 선택
@@ -98,6 +84,7 @@
             // 데이터를 반영
             //document.querySelector("#edit-priority-check").value = checkbox;
             document.querySelector("#edit-todo").value = todo;
+            document.querySelector("#edit-todo-create-date").value = createDate;
             document.querySelector("#edit-todo-due-date").value = dueDate;
             document.querySelector("#edit-todo-id").value = todoId;
 
@@ -105,12 +92,11 @@
 
         });
     }
-
     function editButtonClick(){
         const toDoJson = {
             id : document.querySelector("#edit-todo-id").value,
             todo: document.querySelector("#edit-todo").value,
-            create_date: document.querySelector("#edit-todo-due-date").value,
+            create_date: document.querySelector("#edit-todo-create-date").value,
             due_date: document.querySelector("#edit-todo-due-date").value,
             priority: document.querySelector("#edit-priority-check").checked
 
