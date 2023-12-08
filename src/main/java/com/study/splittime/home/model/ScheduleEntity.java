@@ -1,4 +1,4 @@
-package com.study.splittime.home.db;
+package com.study.splittime.home.model;
 
 import com.study.splittime.todo.db.ToDoEntity;
 import lombok.*;

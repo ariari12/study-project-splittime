@@ -32,53 +32,29 @@
         </div>
       </div>
       <div class="register-screen-child"></div>
-      <div class="register-screen1">
+      <form class="register-screen1">
         <b class="register">Register</b>
-        <div class="login-button">
-          <div class="enter-your-username">Register</div>
-        </div>
-        <img class="back-button-icon" alt="" src="./public/back-button.svg" />
+
+        <img onclick="history.back()" class="back-button-icon" style="cursor: pointer" alt="" src="./public/back-button.svg" />
 
         <div class="username">
-          <div class="username-fuild">
-            <div class="enter-your-username">Enter your Username</div>
-          </div>
-          <div class="username1">Username</div>
+          <label for="name" class="username1">Username</label>
+          <input type="text" id="name" class="username-fuild" style="color: white">
         </div>
         <div class="password">
-          <div class="password-fuild">
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-          </div>
-          <div class="password1">Password</div>
+          <label for="password" class="password1">Password</label>
+          <input type="password" id="password" class="password-fuild" style="color: white">
         </div>
         <div class="password2">
-          <div class="password-fuild">
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-            <div class="password-fuild-child"></div>
-          </div>
-          <div class="confirm-password">Confirm Password</div>
+          <label for="confirm-password" class="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" class="password-fuild" style="color: white">
         </div>
+
+
+        <button type="submit" class="login-button" style="font-size: 25px">Register</button>
+
+
+
         <div class="divider">
           <div class="or">or</div>
           <img class="divider-child" alt="" src="./public/vector-1.svg" />
@@ -95,7 +71,26 @@
 
           <div class="enter-your-username">Register with Appe</div>
         </div>
-      </div>
+      </form>
     </div>
+  <script>
+          var password = document.getElementById("password")
+          ,confirm_password = document.getElementById("confirm-password");
+
+          function validatePassword(){
+          if(password.value !== confirm_password.value) { // 만일 두 인풋 필드값이 같지 않을 경우
+    // setCustomValidity의 값을 지정해 무조건 경고 표시가 나게 하고
+    confirm_password.setCustomValidity("Passwords Don't Match");
+    }
+    else { // 만일 두 인풋 필드값이 같을 경우
+    // 오류가 없으면 메시지를 빈 문자열로 설정해야한다. 오류 메시지가 비어 있지 않은 한 양식은 유효성 검사를 통과하지 않고 제출되지 않는다.
+    // 따라서 빈값을 주어 submit 처리되게 한다
+    confirm_password.setCustomValidity('');
+    }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+  </script>
   </body>
 </html>

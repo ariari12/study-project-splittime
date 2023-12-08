@@ -32,36 +32,22 @@
         </div>
       </div>
       <div class="login-screen-child"></div>
-      <div class="login-screen1">
-        <img class="back-button-icon1" alt="" src="./public/back-button1.svg" />
+      <form class="login-screen1">
+        <img onclick="history.back()" class="back-button-icon1" style="cursor: pointer" alt="" src="./public/back-button1.svg" />
 
         <b class="login">Login</b>
         <div class="username2">
-          <div class="username-fuild1">
-            <div class="login-with-google">Enter your Username</div>
-          </div>
-          <div class="username3">Username</div>
+          <label for="name" class="username3">Username</label>
+          <input type="text" id="name" class="username-fuild1" style="color: white">
         </div>
         <div class="password3">
-          <div class="password-fuild2">
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-            <div class="password-fuild-child21"></div>
-          </div>
-          <div class="password4">Password</div>
+          <label for="password" class="password4">Password</label>
+          <input id="password" type="password" class="password-fuild2" style="color: white">
         </div>
-        <div class="login-button1">
-          <div class="login-with-google">Login</div>
-        </div>
+
+
+        <button type="submit" class="login-button1" style="font-size: 25px">Login</button>
+
         <div class="divider1">
           <div class="or1">or</div>
           <img class="divider-inner" alt="" src="./public/vector-11.svg" />
@@ -80,9 +66,9 @@
         </div>
         <div class="dont-have-an-container">
           <span>Don’t have an account?</span>
-          <span class="register2"> Register</span>
+          <span class="register2"> <a href="RegisterScreen.html">Register</a></span>
         </div>
-      </div>
+      </form>
     </div>
   </body>
 </html>

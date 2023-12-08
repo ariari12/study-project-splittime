@@ -1,6 +1,6 @@
 package com.study.splittime.home.service;
 
-import com.study.splittime.home.db.ScheduleEntity;
+import com.study.splittime.home.model.ScheduleEntity;
 import com.study.splittime.home.db.ScheduleRepository;
 import com.study.splittime.home.model.ScheduleDto;
 
