@@ -1,15 +1,25 @@
 package com.study.splittime.user.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.study.splittime.home.model.ScheduleEntity;
+import lombok.*;
 
-@Entity
+import javax.persistence.*;
+import java.util.List;
+
+@Entity(name = "user")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@ToString
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String password;
+
+    @OneToOne(mappedBy = "userEntity")
+    private ScheduleEntity schedule;
 }

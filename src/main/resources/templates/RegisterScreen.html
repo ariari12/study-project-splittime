@@ -32,25 +32,23 @@
         </div>
       </div>
       <div class="register-screen-child"></div>
-      <form class="register-screen1">
+      <form class="register-screen1" action="/register" method="post">
         <b class="register">Register</b>
 
         <img onclick="history.back()" class="back-button-icon" style="cursor: pointer" alt="" src="./public/back-button.svg" />
 
         <div class="username">
           <label for="name" class="username1">Username</label>
-          <input type="text" id="name" class="username-fuild" style="color: white">
+          <input type="text" id="name" name="name" class="username-fuild" style="color: white">
         </div>
         <div class="password">
           <label for="password" class="password1">Password</label>
-          <input type="password" id="password" class="password-fuild" style="color: white">
+          <input type="password" id="password" name="password" class="password-fuild" style="color: white">
         </div>
         <div class="password2">
           <label for="confirm-password" class="confirm-password">Confirm Password</label>
           <input type="password" id="confirm-password" class="password-fuild" style="color: white">
         </div>
-
-
         <button type="submit" class="login-button" style="font-size: 25px">Register</button>
 
 

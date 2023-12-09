@@ -25,6 +25,7 @@ public class ScheduleConverter {
                 .scheduleName(scheduleEntity.getScheduleName())
                 .id(scheduleEntity.getId())
                 .toDoList(toDoList)
+                .userEntity(scheduleEntity.getUserEntity())
                 .build();
 
     }
@@ -32,6 +33,7 @@ public class ScheduleConverter {
         return ScheduleEntity.builder()
                 .scheduleName(scheduleDto.getScheduleName())
                 .id(scheduleDto.getId())
+                .userEntity(scheduleDto.getUserEntity())
                 .build();
 
     }

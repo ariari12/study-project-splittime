@@ -32,17 +32,17 @@
         </div>
       </div>
       <div class="login-screen-child"></div>
-      <form class="login-screen1">
+      <form class="login-screen1" action="/login" method="post">
         <img onclick="history.back()" class="back-button-icon1" style="cursor: pointer" alt="" src="./public/back-button1.svg" />
 
         <b class="login">Login</b>
         <div class="username2">
           <label for="name" class="username3">Username</label>
-          <input type="text" id="name" class="username-fuild1" style="color: white">
+          <input type="text" id="name" name="name" class="username-fuild1" style="color: white">
         </div>
         <div class="password3">
           <label for="password" class="password4">Password</label>
-          <input id="password" type="password" class="password-fuild2" style="color: white">
+          <input id="password" type="password" name="password" class="password-fuild2" style="color: white">
         </div>
 
 
@@ -66,9 +66,10 @@
         </div>
         <div class="dont-have-an-container">
           <span>Don’t have an account?</span>
-          <span class="register2"> <a href="RegisterScreen.html">Register</a></span>
+          <span class="register2"> <a href="/register">Register</a></span>
         </div>
       </form>
+
     </div>
   </body>
 </html>
