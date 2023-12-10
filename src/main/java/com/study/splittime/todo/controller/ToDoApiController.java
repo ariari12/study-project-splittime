@@ -3,11 +3,12 @@ package com.study.splittime.todo.controller;
 import com.study.splittime.todo.model.ToDoDto;
 import com.study.splittime.todo.service.ToDoService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
+@Slf4j
 @Controller
 @RequestMapping("/home")
 @RequiredArgsConstructor
@@ -23,7 +24,7 @@ public class ToDoApiController {
     public ResponseEntity<ToDoDto> editTodo(
             @PathVariable Long id,
             @RequestBody ToDoDto editTodo) throws Exception {
-
+        log.info("editTodo={}",editTodo);
         ToDoDto updatedDto = toDoService.update(editTodo, id);
         return ResponseEntity.status(HttpStatus.OK).body(updatedDto);
     }

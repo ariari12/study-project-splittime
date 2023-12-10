@@ -38,6 +38,7 @@ public class UserController {
     public String login(HttpSession session, UserEntity userEntity) throws Exception {
 
         UserEntity user=userService.login(userEntity);
+        session.setMaxInactiveInterval(-1);
         session.setAttribute("loginUser",user);
         var loginUser=session.getAttribute("loginUser");
         log.info("----------------{}",loginUser);

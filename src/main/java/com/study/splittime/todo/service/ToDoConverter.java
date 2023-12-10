@@ -61,6 +61,7 @@ public class ToDoConverter {
         target.setCreated(dto.getCreated());
         target.setDueDate(dto.getDueDate());
         target.setPriority(dto.isPriority());
+        log.info("return target={}",target);
         return target;
 
     }
